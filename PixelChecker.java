@@ -37,6 +37,9 @@ public class PixelChecker {
     private final int[] shrimp = {860, 200};
     private final int[] hockey = {860, 300};
     private final int[] movie = {860, 400};
+    
+    public int[][] stuff = {rig, bank, lemon, news, car, pizza, doughnut, shrimp, hockey, movie};
+    public String[] stuff_str = {"rig", "bank", "lemon", "news", "car", "pizza", "doughnut", "shrimp", "hockey", "movie"};
 
     public static void main(String args[]) throws AWTException, InterruptedException, IOException {
 
@@ -76,8 +79,7 @@ public class PixelChecker {
 
     public void checkForStuff() {
 
-        int[][] stuff = {rig, bank, lemon, news, car, pizza, doughnut, shrimp, hockey, movie};
-        String[] stuff_str = {"rig", "bank", "lemon", "news", "car", "pizza", "doughnut", "shrimp", "hockey", "movie"};
+        
 
         for (int i = 0; i < stuff.length; i++) {
 
@@ -117,6 +119,15 @@ public class PixelChecker {
         robot.mouseMove(Cx, Cy);
 
     }
+    
+    public void click(int type){
+        
+        robot.mouseMove(stuff[type][0], stuff[type][1]);
+        System.out.println("CLICKED ON: " + stuff_str[type].toUpperCase());
+        
+    }
+    
+    
 }
 
 
